@@ -30,7 +30,7 @@ jobs:
         os: [ ubuntu-latest ]
         include:
           - gradle-tasks: ":app:iosSimulatorArm64Binaries"
-            os: macos-latest-xlarge
+            os: macos-latest
 
     steps:
       - name: Configure Git

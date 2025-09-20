@@ -12,7 +12,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(libs.versions.jdkVersion.get().toInt())
 
     androidTarget {
         // https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-test.html
@@ -81,13 +81,13 @@ kotlin {
             implementation(libs.androidx.datastore.preferences)
         }
 
-        webMain.dependencies {
-        }
+//        webMain.dependencies {
+//        }
     }
 }
 
 android {
-    namespace = "com.jetbrains.example.kotlin_agents_demo_app"
+    namespace = "com.jetbrains.example.koog.compose"
     compileSdk = 36
 
     buildFeatures {
@@ -95,7 +95,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.jetbrains.example.kotlin_agents_demo_app"
+        applicationId = "com.jetbrains.example.koog.compose"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -137,7 +137,7 @@ compose.desktop {
             }
             macOS {
                 // iconFile.set(project.file("desktopAppIcons/MacosIcon.icns"))
-                bundleID = "com.jetbrains.example.kotlin_agents_demo_app.desktopApp"
+                bundleID = "com.jetbrains.example.koog.compose.desktopApp"
             }
         }
     }
@@ -151,4 +151,3 @@ configurations.all {
     // FIXME exclude netty from Koog dependencies?
     exclude(group = "io.netty", module = "*")
 }
-
