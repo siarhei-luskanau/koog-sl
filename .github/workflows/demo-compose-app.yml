@@ -61,3 +61,44 @@ jobs:
       - name: Assemble target
         working-directory: ./examples/demo-compose-app
         run: ./gradlew ${{ matrix.gradle-tasks }} --stacktrace
+
+
+  Tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        gradle-tasks: [
+          "jvmTest"
+          # "wasmJsBrowserTest"
+        ]
+        os: [ ubuntu-latest ]
+        include:
+          - gradle-tasks: "iosSimulatorArm64Test"
+            os: macos-latest
+    steps:
+      - name: Configure Git
+        run: |
+          git config --global core.autocrlf input
+      - uses: actions/checkout@v5
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v5
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          cache: gradle
+
+      # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
+      # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          # Cache downloaded JDKs/konan in addition to the default directories.
+          gradle-home-cache-includes: |
+            caches
+            notifications
+            jdks
+            ~/.konan/**
+      - name: Run UI tests
+        working-directory: ./examples/demo-compose-app
+        run: ./gradlew ${{ matrix.gradle-tasks }} --stacktrace
