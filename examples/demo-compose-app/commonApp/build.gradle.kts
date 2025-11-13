@@ -1,4 +1,7 @@
+@file:OptIn(ExperimentalWasmDsl::class)
+
 import org.jetbrains.compose.reload.gradle.ComposeHotRun
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
@@ -10,7 +13,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(libs.versions.jdkVersion.get().toInt())
+    jvmToolchain(libs.versions.javaVersion.get().toInt())
 
     android {
         namespace = "com.jetbrains.example.koog.share.ui"
