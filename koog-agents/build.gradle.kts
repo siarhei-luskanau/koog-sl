@@ -125,6 +125,12 @@ kotlin {
             }
         }
 
+        commonTest {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
+
         androidMain.dependencies {
             api(libs.ktor.client.okhttp)
         }
