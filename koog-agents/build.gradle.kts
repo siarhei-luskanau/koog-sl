@@ -148,6 +148,24 @@ kotlin {
         wasmJsMain.dependencies {
             api(libs.ktor.client.js)
         }
+
+        commonTest {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
+
+        jvmTest {
+            dependencies {
+                implementation(kotlin("test-junit5"))
+            }
+        }
+
+        jsTest {
+            dependencies {
+                implementation(kotlin("test-js"))
+            }
+        }
     }
 }
 
