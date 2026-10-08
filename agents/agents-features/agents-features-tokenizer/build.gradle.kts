@@ -39,7 +39,7 @@ kotlin {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-junit5"))
                 implementation(libs.kotlinx.coroutines.test)
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
                 implementation(libs.ktor.server.cio)
             }
         }

@@ -25,7 +25,7 @@ kotlin {
 
         jsTest {
             dependencies {
-                implementation(libs.ktor.client.js)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
 
@@ -39,7 +39,7 @@ kotlin {
             dependencies {
                 implementation(project(":http-client:http-client-ktor"))
                 implementation(libs.ktor.client.mock)
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
     }

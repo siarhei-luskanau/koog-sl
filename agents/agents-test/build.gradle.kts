@@ -38,7 +38,7 @@ kotlin {
         jvmTest {
             dependencies {
                 implementation(project(":agents:agents-features:agents-features-event-handler"))
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
                 implementation(project(":agents:agents-ext"))
             }
         }

@@ -33,7 +33,7 @@ kotlin {
                 implementation(project(":serialization:serialization-jackson"))
                 implementation(project(":agents:agents-features:agents-features-event-handler"))
                 implementation(libs.mockk)
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
     }

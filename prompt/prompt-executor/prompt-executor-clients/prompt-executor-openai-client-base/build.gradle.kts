@@ -19,7 +19,7 @@ kotlin {
 
         jsTest {
             dependencies {
-                api(libs.ktor.client.js)
+                api(libs.ktor.client.engine.defaults)
             }
         }
 
@@ -32,7 +32,7 @@ kotlin {
         jvmTest {
             dependencies {
                 implementation(kotlin("test-junit5"))
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
     }
