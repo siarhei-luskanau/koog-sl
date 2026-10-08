@@ -39,7 +39,7 @@ kotlin {
             dependencies {
                 implementation(project(":agents:agents-test"))
                 implementation(libs.mcp.server)
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
     }

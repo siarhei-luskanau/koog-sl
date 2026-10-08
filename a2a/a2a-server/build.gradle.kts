@@ -39,7 +39,7 @@ kotlin {
                 implementation(project(":a2a:a2a-transport:a2a-transport-client-jsonrpc-http"))
                 implementation(project(":a2a:a2a-transport:a2a-transport-server-jsonrpc-http"))
 
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
                 implementation(libs.ktor.client.logging)
                 implementation(libs.ktor.server.netty)
                 runtimeOnly(libs.logback.classic)

@@ -89,7 +89,7 @@ kotlin {
 
                 // Real Ktor engine for jvmTest paths that need an actual HTTP transport
                 // (env-var-gated Langfuse / Weave integration tests against the real cloud).
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
     }

@@ -42,7 +42,7 @@ kotlin {
 
         jvmTest {
             dependencies {
-                implementation(libs.ktor.client.cio)
+                implementation(libs.ktor.client.engine.defaults)
             }
         }
     }

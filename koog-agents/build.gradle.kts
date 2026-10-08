@@ -189,29 +189,29 @@ kotlin {
         }
 
         jvmMain.dependencies {
-            api(libs.ktor.client.apache5)
+            api(libs.ktor.client.engine.defaults)
         }
 
         androidMain.dependencies {
-            api(libs.ktor.client.okhttp)
+            api(libs.ktor.client.engine.defaults)
         }
 
         appleMain {
             dependsOn(nonWasmJsMain)
             dependencies {
-                api(libs.ktor.client.darwin)
+                api(libs.ktor.client.engine.defaults)
             }
         }
 
         jsMain {
             dependsOn(nonWasmJsMain)
             dependencies {
-                api(libs.ktor.client.js)
+                api(libs.ktor.client.engine.defaults)
             }
         }
 
         wasmJsMain.dependencies {
-            api(libs.ktor.client.js)
+            api(libs.ktor.client.engine.defaults)
         }
     }
 }
